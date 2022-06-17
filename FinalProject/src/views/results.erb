@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    <body>
+        <figure class="text-center" style="margin: 50px">
+            <p class="lead"> You got <%=@points%> questions correct!</p>
+            <h3>Leaderboard</h3>
+            <table style="margin: auto">
+                <tr>
+                    <th>
+                        Users
+                    </th>
+                    <th>
+                        Score
+                    </th>
+                </tr>
+
+                <% @info.each do |record| %>
+                    <tr>
+                        <td><%= record['initials'] %></td>
+                        <td><%= record['score'] %></td>
+                    </tr>
+                <% end %>
+
+            </table>
+            <form action="/">
+                <input type="submit" class="btn btn-primary" value="Take another quiz"/>
+            </form>
+        </figure>
+    </body>
+</html>

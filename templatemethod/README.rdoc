@@ -1,0 +1,30 @@
+= Template Pattern
+
+This documentation was developed as part of a programming activity for the <em>Software Design and Architecture</em> course (Tc3049), at the Tecnológico de Monterrey, Campus Estado de México.
+
+== Authors
+
+* A01377744 <em> Alejandro Torices Oliva </em>
+* A01376544 <em> Mariana Paola Caballero Cabrera </em>
+
+== Overview
+
+The <b>template pattern</b> is a GoF creational design pattern that creates a base class with a template method that controls the overall processing and then to use subclasses to fill in the details.
+
+The UML diagram for this programming activity is as follows:
+
+rdoc-image:img/template_uml.png
+
+To test the program, inside the +src+ folder type the following instruction at the command line:
+
+    ruby -I . -w table_generator_test.rb
+
+== References
+
+- \R. Olsen. <em>Design Patterns in Ruby.</em> Addison-Wesley, 2007.
+
+- Ruby-Doc.org. <em>RDoc Markup Reference.</em> {\http://ruby-doc.org/stdlib-2.4.1/libdoc/rdoc/rdoc/RDoc/Markup.html%7D[http://ruby-doc.org/stdlib-2.4.1/libdoc/rdoc/rdoc/RDoc/Markup.html] Accessed August 17, 2017.
+
+- <em>\Ruby «require» error: cannot load such file.</em> (2012). Stack Overflow. Accessed march 3, 2022. https://stackoverflow.com/questions/9750610/ruby-require-error-cannot-load-such-file
+
+- <em>\join (Array) - APIdock.</em> (n. d.). Api Dock. Accessed march 3, 2022. https://apidock.com/ruby/Array/join

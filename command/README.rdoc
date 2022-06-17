@@ -1,0 +1,32 @@
+= Command Pattern
+
+This documentation was developed as part of a programming activity for the <em>Software Design and Architecture</em> course (Tc3049), at the Tecnológico de Monterrey, Campus Estado de México.
+
+== Authors
+
+* A01377744 <em> Alejandro Torices Oliva </em>
+* A01376544 <em> Mariana Paola Caballero Cabrera </em>
+
+== Overview
+
+The <b>command pattern</b> is an instruction to do something, it can be in the moment, for later or when the action is triggered by a specific “command”. This pattern helps to undo or redo things that have already happened. Another quality of the command pattern is that actions can be triggered by specific items (buttons).
+The essence of the command pattern is factoring out the action code into its own object.
+
+The UML diagram for this programming activity is as follows:
+
+rdoc-image:img/command_uml.jpeg
+
+To test the program, inside the +src+ folder type the following instruction at the command line:
+
+    ruby -I . -w control_test.rb
+
+== Acknowledgments
+
+<em>Alex Fernando Leyva Martínez</em>
+<em>Claudio Mayoral García</em>
+
+== References
+
+- \R. Olsen. <em>Design Patterns in Ruby.</em> Addison-Wesley, 2007.
+
+- Ruby-Doc.org. <em>RDoc Markup Reference.</em> {\http://ruby-doc.org/stdlib-2.4.1/libdoc/rdoc/rdoc/RDoc/Markup.html}[http://ruby-doc.org/stdlib-2.4.1/libdoc/rdoc/rdoc/RDoc/Markup.html] Accessed August 17, 2017.

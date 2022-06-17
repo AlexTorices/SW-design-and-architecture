@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Books</title>
+    </head>
+    <body>
+        <h1>Libros</h1>
+        <p>Lista de libros: </p>
+        <p>
+            <% @info.each do |book| %>
+            <ul>
+                <li>
+                    <em><%=book['Title'] %></em>,
+                    <%=book['Author']%>
+                    (<%=book['Year']%>)
+                </li>
+            </ul>
+            <%end%>
+        </p>
+    </body>
+</html>

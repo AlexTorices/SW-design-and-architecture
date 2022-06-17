@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    <body>
+        <figure class="text-center" style="margin: 50px">
+            <p class="lead">Question #<%= @current +1%>/<%=@number%></p>
+            <p class="lead">
+                <%= @quiz.peek['question']%>
+            </p>
+            <form action="/check">
+                <p style="margin: 50px">
+                    <% @quiz.peek['options'].each do |op| %>
+                    <input style="margin: 10px" type="radio" id="option" name="option" value= <%= op['text']%> required>
+                    <label style="margin: 10px" for="option"><%=op['text'] %></label><br>
+                    <%end%>
+                </p>
+                <button type="submit" class="btn btn-primary"> next </button>
+            </form>
+        </figure>
+    </body>
+</html>

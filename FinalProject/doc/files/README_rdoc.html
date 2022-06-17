@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+<head>
+<title>README.rdoc</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<link href='../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+<script type='text/javascript'>
+  function popupCode(url) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+  
+  function toggleCode(id) {
+    var code = document.getElementById(id)
+  
+    code.style.display = code.style.display != 'block' ? 'block' : 'none'
+    return true
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+</script>
+</head>
+<body class='page'>
+<div class='file' id='wrapper'>
+<div class='header'>
+<h1 class='name'>README.rdoc
+</h1>
+<div class='paths'>
+README.rdoc
+</div>
+<div class='last-update'>
+Last Update:
+<span class='datetime'>2022-06-10 22:55:47 +0000</span>
+</div>
+</div>
+<div id='content'>
+<div id='text'>
+<div id='description'>
+<h1 id="label-Application+Design+and+Architecture">Application Design and Architecture<span><a href="#label-Application+Design+and+Architecture">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Authors:</p>
+<ul><li>
+<p>A01377744 <em> Alejandro Torices Oliva </em></p>
+</li><li>
+<p>A01376544 <em> Mariana Paola Caballero Cabrera </em></p>
+</li></ul>
+<table class="rdoc-list note-list"><tbody><tr><td class='label'>Date</td><td>
+<p>June 10, 2021</p>
+</td></tr></tbody></table>
+
+<p>The systems allows the user to select a number of questions between 1-10 regarding Software design architecture. On a web browser the user will be able to answer the questions and get a feedback if they chose the incorrectone, at the end the user will be able to see the scoreboard of all the players. This system implements lambda funtions to be able to make request to the server from the web browser.</p>
+
+<p>If you haven’t done so already, install the Hanna Nouveau Ruby gem. At the terminal type:</p>
+
+<pre>$ gem install hanna-nouveau</pre>
+
+<p>The directory structure for the application and its documentation is as follows:</p>
+
+<pre>FinalProject/
+      ├─ doc/                        Folder produced by RDoc.
+      ├─ img/                        Folder for the documentation’s image files.
+      └─ src/                        Folder for the application’s source code.
+           ├─ public/                Folder for the server’s public documents.
+           │       └─ stylesheets/   Folder for the application’s CSS files.
+           ├─ models/                Folder for the application’s models.
+           └─ views/                 Folder for the application’s views (ERB files).</pre>
+
+<p>The <code>builddocs.sh</code> shell script contains the required instructions to produce the RDoc documentation. Run the script from the <code>FinalProject</code> directory, typing at the terminal:</p>
+
+<pre>$ bash builddocs.sh</pre>
+
+<p>The root of the documentation should now be available at: <code>FinalProject/doc/index.html</code></p>
+
+<p>Use any web browser to see the result.</p>
+
+<h2 id="label-Installing+and+Running+the+Application">Installing and Running the Application<span><a href="#label-Installing+and+Running+the+Application">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>You need to have Ruby 2.6 or better, JSON gem installed and the <a target="_top" href="http://www.sinatrarb.com/">Sinatra</a> gem installed in your system to run the <em>FinalProject</em> web application. To run the server type the following command at the terminal from the <code>FinalProject/src</code> directory:</p>
+
+<pre>$ ruby -I . -w quiz.rb</pre>
+
+<p>Afterwards, point your web browser the server’s root URL.</p>
+
+<h2 id="label-4-2B1+Architectural+View+Model">4+1 Architectural View Model<span><a href="#label-4-2B1+Architectural+View+Model">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>The 4+1 Architectural View Model by Philippe Kruchten, allows architects to break down and look at a system according to 5 different views. It is usefull to understand the role that each one of the UML models plays in the program that you are creating.</p>
+
+<h3 id="label-Logical+View">Logical View<span><a href="#label-Logical+View">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The logical view contains information about the various parts of the system. In UML the logical view is typically modeled using <em>class diagrams</em>.</p>
+
+<p>For example, the following figure represents the UML class diagram for the <code>FinalProject</code> model and its factory class:</p>
+
+<p><img src="img/class_diagram.png"></p>
+
+<h3 id="label-Process+View">Process View<span><a href="#label-Process+View">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The process view focuses on the runtime behavior of the system. In UML, <em>activity diagrams</em> are used to model this view.</p>
+
+<p><img src="img/activity_diagram.png"></p>
+
+<h3 id="label-Development+View">Development View<span><a href="#label-Development+View">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The development view focuses on software modules and subsystems. In UML, <em>package diagrams</em> are used to model the development view.</p>
+
+<p><img src="img/package_diagram.png"></p>
+
+<h3 id="label-Physical+View">Physical View<span><a href="#label-Physical+View">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The physical view describes the physical deployment of the system, revealing which pieces of software run on what pieces of hardware. In UML, <em>deployment diagrams</em> are used to model the physical view.</p>
+
+<p><img src="img/deployment_diagram.png"></p>
+
+<h3 id="label-Scenarios">Scenarios<span><a href="#label-Scenarios">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>This view describes the functionality of the system from the perspective from outside world. It contains diagrams describing what the system is supposed to do from a black box perspective. UML <em>use case diagrams</em> are used for this view.</p>
+
+<p><img src="img/use_case_diagram.png"></p>
+
+<h2 id="label-Patterns+Used">Patterns Used<span><a href="#label-Patterns+Used">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>The patterns used in our model are:</p>
+<ul><li>
+<p><strong>Domain-Specific Language</strong>: The <code>server.rb</code> file consists of a series of Sinatra <em>routes</em>. Sinatra is a DSL for creating web applications in Ruby.</p>
+</li><li>
+<p><strong>Model-View-Controller</strong>: The application follows the classical web implementation of the MVC architectural pattern. The models (<code>.rb</code> files) and views (<code>.erb</code> files) are stored in the corresponding <code>models</code> and <code>views</code> directory. The controller is contained in <code>server.rb</code> file.</p>
+</li><li>
+<p><strong>Iterator</strong>: Our questions.json file has the number of quiestions and we iterate on them one by one.</p>
+</li><li>
+<p><strong>Microservices(proxy)</strong>: The web client needs information located acrooss multiple microservices. In this case, one microservice adds the calls and the other the response.</p>
+</li></ul>
+
+<h2 id="label-References">References<span><a href="#label-References">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>M. Fowler. <em>UML Distilled: A Brief Guide to the Standard <a href="../classes/Object.html"><code>Object</code></a> Modeling Language, 3rd Edition.</em>  Addison-Wesley, 2003.</p>
+</li><li>
+<p>E. Gamma, R. Helm, R. Johnson, J. M. Vlissides. <em>Design Patterns: Elements of Reusable Object-Oriented Software.</em> Addison-Wesley, 1994.</p>
+</li><li>
+<p>A. Harris, K. Haase. <em>Sinatra: Up and Running.</em> O’Reilly, 2011.</p>
+</li><li>
+<p>Ph. Kruchten. <em>The 4+1 View Model of Architecture.</em> IEEE Software, vol. 12 (6), pp. 45-50, 1995. <a target="_top" href="http://www.ics.uci.edu/~andre/ics223w2006/kruchten3.pdf">http://www.ics.uci.edu/~andre/ics223w2006/kruchten3.pdf</a> Accessed June 10, 2021.</p>
+</li><li>
+<p>R. Olsen. <em>Design Patterns in Ruby.</em> Addison-Wesley, 2007.</p>
+</li><li>
+<p>Ruby-Doc.org. <em>RDoc Markup Reference.</em> <a href="https://ruby-doc.org/stdlib-3.0.0/libdoc/rdoc/rdoc/RDoc/Markup.html">http://ruby-doc.org/stdlib-3.0.0/libdoc/rdoc/rdoc/RDoc/Markup.html</a> Accessed June 10, 2021.</p>
+</li><li>
+<p>Source Making. <em> Design Patterns.</em> [<a href="https://sourcemaking.com/design_patterns">sourcemaking.com/design_patterns</a>/] Accessed June 10, 2021.</p>
+</li><li>
+<p>Source Making. <em> AntiPatterns.</em> [<a href="https://sourcemaking.com/antipatterns">sourcemaking.com/antipatterns</a>/] Accessed June 10, 2021.</p>
+</li></ul>
+</div>
+<div id='context'>
+</div>
+
+</div>
+</div>
+
+<div id='footer-push'></div>
+</div>
+<div id='footer'>
+<a href="https://github.com/jeremyevans/hanna-nouveau"><strong>Hanna Nouveau</strong> RDoc template</a>
+</div>
+</body>
+</html>

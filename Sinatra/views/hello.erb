@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Saludos
+        </title>
+    </head>
+    <body>
+        <img src='/img/choncc.png'>
+        <h1>Saludos</h1>
+        <p>¡Hola <%= @name %>!</p>
+        <ul>
+            <% @potencias.each do |n| %>
+            <li>
+                <%= n %>
+            </li>
+            <% end %>
+        </ul>
+    </body>
+</html>

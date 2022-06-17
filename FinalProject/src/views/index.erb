@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    <body>
+    <figure class="text-center">
+        <h1 class="display-1">Quiz</h1>
+        <p class="lead">¡Welcome to the Quiz!</p>
+        <form action="/start">
+            <label for="initials">Enter your initials:</label>
+            <input type="text" id="initials" name="initials" size="3"  minlength="3" maxlength="3" required>
+            <br>
+            <label for="questions">Number of questions:</label>
+            <input type="number" id="questions" name="questions" min="1" max="10" required>
+            <input type="submit" class="btn btn-primary" value="Start">
+        </form>
+    </figure>
+
+    </body>
+</html>
